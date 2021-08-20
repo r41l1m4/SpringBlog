@@ -16,7 +16,8 @@ public class DummyData {
     @Autowired
     SpringBlogRepository springBlogRepository;
 
-    @PostConstruct
+    //uncomment the line below if you wanna populate the DB.
+    //@PostConstruct
     public void savePosts() {
         List<Post> postList = new ArrayList<>();
         Post post1 = new Post();
