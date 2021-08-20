@@ -31,7 +31,7 @@
                            <span th:text="${post.autor}"></span>
                            <span th:text="${post.data}"></span>
                        </p>
-                        <a href="#">
+                        <a th:href="${(#mvc.url('SBC#getPostDetails').arg(0, post.id)).build()}">
                             <h4 class="card-title" style="font-weight: bolder; color: black;">
                                 <span th:text="${post.titulo}"></span>
                             </h4>
