@@ -13,6 +13,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -25,7 +26,11 @@ public class SpringBlogController {
     public ModelAndView getPosts() {
         ModelAndView mv = new ModelAndView("posts");
         List<Post> posts = springBlogService.findAll();
-        mv.addObject("posts", posts);
+        List<Post> posts2 = new ArrayList<>();
+        for(int i = posts.size() - 1; i >= 0; i--){
+            posts2.add(posts.get(i));
+        }
+        mv.addObject("posts", posts2);
         return mv;
     }
 
